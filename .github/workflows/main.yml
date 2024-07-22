@@ -24,8 +24,8 @@ jobs:
 
       - name: Add & Commit
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "sebdev43c@gmail.com"
+          git config --local user.name "Sebdev43"
           git add -A
           git commit -m "Generated snake animation"
       - name: Push changes
