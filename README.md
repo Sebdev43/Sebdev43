@@ -69,8 +69,18 @@
       collaboratif. Plongez dans les messages de commit pour découvrir ce sur
       quoi j'ai travaillé !
     </p>
-   ![snake animation](https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake2.svg)
-
+   <img
+    src="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake2.svg"
+    alt="GitHub Contribution Grid Snake Animation"
+  />
+  <img
+    src="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake-dark.svg"
+    alt="GitHub Contribution Grid Snake Animation Dark Mode"
+  />
+  <img
+    src="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake.svg"
+    alt="GitHub Contribution Grid Snake Animation Light Mode"
+  />
   </section>
 
   <h2 align="center" class="section-heading">💻 Programming Languages</h2>
