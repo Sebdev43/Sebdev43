@@ -70,9 +70,9 @@
       quoi j'ai travaillé !
     </p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake.svg">
-  <img alt="GitHub Contribution Snake" src="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake.svg">
+  <img alt="GitHub Contribution Snake" src="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake.svg">
 </picture>
 
   </section>
