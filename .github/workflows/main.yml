@@ -1,4 +1,3 @@
-
 name: Generate snake game
 
 on:
@@ -19,10 +18,12 @@ jobs:
           svg_out_path: dist/github-contribution-grid-snake2.svg
           snake_color: 'blue'
 
-      - uses: crazy-max/ghaction-github-pages@v2.1.3
+      - name: Push changes to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           target_branch: output
           build_dir: dist
+          keep_history: true
+          allow_empty_commit: false
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
-  
