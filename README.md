@@ -62,12 +62,7 @@
   <section align="center">
     <h2>🚀 Github Commits</h2>
     <p>
-      Cette section met en avant mon activité quotidienne, présentant les dépôts
-      sur lesquels je travaille actuellement. Chaque commit représente des
-      progrès ou des corrections sur des projets en cours, reflétant mon
-      engagement envers l'amélioration continue et le développement
-      collaboratif. Plongez dans les messages de commit pour découvrir ce sur
-      quoi j'ai travaillé !
+      Cette section met en avant mes contributions sur GitHub, illustrées de manière ludique par une animation Snake. Chaque point sur le graphique représente une contribution, et l'animation montre comment mes activités se sont accumulées au fil du temps. Cette visualisation est une manière créative de suivre et d'afficher mon engagement constant dans divers projets et mon investissement dans l'amélioration continue et le développement collaboratif.
     </p>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake-dark.svg">
