@@ -70,8 +70,8 @@
       quoi j'ai travaillé !
     </p>
     <img
-      src="./dark.svg"
-      alt="GitHub Contribution Grid Snake Animation Dark Mode"
+    src="https://github.com/Sebdev43/Sebdev43/blob/output/github-contribution-grid-snake2.svg"
+    alt="GitHub Contribution Grid Snake Animation"
     />
     <img
       src="./light.svg"
