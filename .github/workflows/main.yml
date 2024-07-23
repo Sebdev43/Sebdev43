@@ -27,6 +27,7 @@ jobs:
           git config --local user.name "Sebdev43"
           git add dist/github-snake.svg dist/github-snake-dark.svg
           git commit -m "Generated snake animation"
+
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
