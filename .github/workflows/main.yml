@@ -11,27 +11,24 @@ jobs:
 
     steps:
       - name: Checkout the repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Mise à jour vers v3
 
       - name: generate-snake-game-from-github-contribution-grid
-        uses: Platane/snk@v3.0.0
+        uses: Platane/snk@v3.1.0  # Assurez-vous d'utiliser la dernière version
         with:
           github_user_name: Sebdev43
           outputs: |
-            dark.svg?palette=github-dark&color_snake=blue
-            light.svg?color_snake=#7845ab
-            ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+            dist/snake-dark.svg?palette=github-dark
+            dist/snake-light.svg?palette=github-light
 
       - name: Add & Commit
         run: |
           git config --local user.email "sebdev43c@gmail.com"
           git config --local user.name "Sebdev43"
-          git add -A
+          git add dist/snake-dark.svg dist/snake-light.svg
           git commit -m "Generated snake animation"
       - name: Push changes
         uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.TOKEN_GITHUB }}
+          github_token: ${{ secrets.snake_token }}
           branch: main  # Change this to your repository's default branch if different
-
-          
