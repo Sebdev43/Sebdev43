@@ -41,7 +41,7 @@
     ensemble !
   </p>
   <section align="center">
-    <a href="[[https://www.linkedin.com/in/sebastien-robert-17300](https://www.linkedin.com/in/s%C3%A9bastien-robert-dev/)](https://www.linkedin.com/in/s%C3%A9bastien-robert-dev/)">
+    <a href="https://www.linkedin.com/in/sébastien-robert-dev">
       <img
         src="https://img.shields.io/badge/SebastienRobert-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"
         alt="LinkedIn"
