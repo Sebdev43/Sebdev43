@@ -26,10 +26,12 @@ jobs:
         run: git stash -u
 
       - name: Checkout output branch
-        run: git checkout -b output
+        run: |
+          git fetch origin
+          git checkout -B output origin/output
 
       - name: Restore untracked files
-        run: git stash pop
+        run: git stash pop || true
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v4
