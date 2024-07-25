@@ -1,8 +1,8 @@
-name: Generate snake game
+name: Générer le jeu de serpent
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs at midnight every day
+    - cron: "0 0 * * *" # Exécuter à minuit tous les jours
   workflow_dispatch:
 
 jobs:
@@ -10,16 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Cloner le dépôt
         uses: actions/checkout@v2
 
-      - name: Install GitHub CLI
+      - name: Installer GitHub CLI
         run: sudo apt-get install gh
 
-      - name: Authenticate GitHub CLI
+      - name: Authentifier GitHub CLI
         run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
-      - name: Fetch all commits across repositories
+      - name: Récupérer tous les commits des dépôts
         run: |
           mkdir -p all-repos
           cd all-repos
@@ -27,7 +27,7 @@ jobs:
             git clone --depth=1 https://github.com/Sebdev43/$repo.git || true
           done
 
-      - name: Generate snake animation
+      - name: Générer l'animation du serpent
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -36,7 +36,12 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Commit and Push changes
+      - name: Créer et passer à la branche output si elle n'existe pas
+        run: |
+          git fetch origin
+          git checkout -b output || git checkout output
+          
+      - name: Commit et Push des changements
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
