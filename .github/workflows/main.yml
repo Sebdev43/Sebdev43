@@ -19,12 +19,22 @@ jobs:
       - name: Authentifier GitHub CLI
         run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
 
-      - name: Récupérer tous les commits des dépôts
+      - name: Récupérer tous les dépôts de Sebdev43
         run: |
-          mkdir -p all-repos
-          cd all-repos
+          mkdir -p repos
+          cd repos
           for repo in $(gh repo list Sebdev43 --limit 100 --json name -q '.[].name'); do
-            git clone --depth=1 https://github.com/Sebdev43/$repo.git || true
+            git clone https://github.com/Sebdev43/$repo.git
+          done
+
+      - name: Récupérer tous les dépôts des organisations avec lesquelles vous travaillez
+        run: |
+          mkdir -p org-repos
+          cd org-repos
+          for org in $(gh api user/orgs --jq '.[].login'); do
+            for repo in $(gh repo list $org --limit 100 --json name -q '.[].name'); do
+              git clone https://github.com/$org/$repo.git
+            done
           done
 
       - name: Générer l'animation du serpent
@@ -36,12 +46,7 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Créer et passer à la branche output si elle n'existe pas
-        run: |
-          git fetch origin
-          git checkout -b output || git checkout output
-          
-      - name: Commit et Push des changements
+      - name: Ajouter et valider les changements
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
