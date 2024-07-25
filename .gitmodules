@@ -1,0 +1,60 @@
+[submodule "org-repos/not/ArduAlti"]
+	path = org-repos/not/ArduAlti
+	url = https://github.com/not/ArduAlti.git
+[submodule "org-repos/not/odrive_ros"]
+	path = org-repos/not/odrive_ros
+	url = https://github.com/not/odrive_ros.git
+[submodule "org-repos/not/a_star"]
+	path = org-repos/not/a_star
+	url = https://github.com/not/a_star.git
+[submodule "org-repos/not/image_processing_gui"]
+	path = org-repos/not/image_processing_gui
+	url = https://github.com/not/image_processing_gui.git
+[submodule "org-repos/not/image_processing"]
+	path = org-repos/not/image_processing
+	url = https://github.com/not/image_processing.git
+[submodule "org-repos/not/Projekt_ZTS"]
+	path = org-repos/not/Projekt_ZTS
+	url = https://github.com/not/Projekt_ZTS.git
+[submodule "org-repos/not/Gcode"]
+	path = org-repos/not/Gcode
+	url = https://github.com/not/Gcode.git
+[submodule "org-repos/not/signalgame"]
+	path = org-repos/not/signalgame
+	url = https://github.com/not/signalgame.git
+[submodule "org-repos/by/linux"]
+	path = org-repos/by/linux
+	url = https://github.com/by/linux.git
+[submodule "org-repos/by/temper-python"]
+	path = org-repos/by/temper-python
+	url = https://github.com/by/temper-python.git
+[submodule "org-repos/by/RT-Kernel"]
+	path = org-repos/by/RT-Kernel
+	url = https://github.com/by/RT-Kernel.git
+[submodule "org-repos/by/fail2ban"]
+	path = org-repos/by/fail2ban
+	url = https://github.com/by/fail2ban.git
+[submodule "org-repos/by/rtl-sdr-misc"]
+	path = org-repos/by/rtl-sdr-misc
+	url = https://github.com/by/rtl-sdr-misc.git
+[submodule "org-repos/by/ptp4RaspberryPi"]
+	path = org-repos/by/ptp4RaspberryPi
+	url = https://github.com/by/ptp4RaspberryPi.git
+[submodule "org-repos/by/dump1090"]
+	path = org-repos/by/dump1090
+	url = https://github.com/by/dump1090.git
+[submodule "org-repos/by/nts-servers"]
+	path = org-repos/by/nts-servers
+	url = https://github.com/by/nts-servers.git
+[submodule "org-repos/by/rtl-sdr-blog"]
+	path = org-repos/by/rtl-sdr-blog
+	url = https://github.com/by/rtl-sdr-blog.git
+[submodule "org-repos/by/piaware_builder"]
+	path = org-repos/by/piaware_builder
+	url = https://github.com/by/piaware_builder.git
+[submodule "org-repos/by/gpsctl"]
+	path = org-repos/by/gpsctl
+	url = https://github.com/by/gpsctl.git
+[submodule "org-repos/by/rtkbase"]
+	path = org-repos/by/rtkbase
+	url = https://github.com/by/rtkbase.git
