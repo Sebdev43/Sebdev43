@@ -41,17 +41,15 @@ jobs:
           cd org-repos
           for org in $(gh api user/orgs --jq '.[].login'); do
             for repo in $(gh repo list $org --limit 100 --json name,defaultBranchRef -q '.[] | select(.defaultBranchRef != null) | .name'); do
-              echo "Checking $org/$repo"
-              if [ "$(gh api repos/$org/$repo/branches --jq '.[] | select(.protected == false) | .name')" ]; then
-                echo "Cloning $org/$repo"
-                git submodule add https://$GITHUB_TOKEN@github.com/$org/$repo.git $org/$repo || echo "Failed to add $org/$repo as a submodule"
-              else
-                echo "Skipping $org/$repo (no unprotected branches or empty repository)"
-              fi
+              echo "Cloning $org/$repo"
+              git submodule add https://github.com/$org/$repo.git $org/$repo || echo "Failed to add $org/$repo as a submodule"
             done
           done
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
+
+      - name: Update submodule URLs to include token
+        run: |
+          git config --global url."https://${{ secrets.TOKEN_SNAKE }}@github.com".insteadOf "https://github.com"
+          git submodule sync --recursive
 
       - name: Commit and push submodules
         run: |
