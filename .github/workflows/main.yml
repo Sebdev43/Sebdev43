@@ -52,8 +52,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
 
+      - name: Change permissions of generated files
+        run: chmod -R 777 dist
+
       - name: Clean untracked files
-        run: git clean -fd
+        run: sudo git clean -fd
 
       - name: Create output branch if it doesn't exist
         run: |
