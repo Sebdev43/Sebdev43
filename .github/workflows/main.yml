@@ -24,7 +24,7 @@ jobs:
 
       - name: Verify generated files
         run: |
-          mkdir -p dist
+          echo "Verifying generated files..."
           ls -la dist
 
       - name: Clone and aggregate repositories
@@ -56,7 +56,9 @@ jobs:
           fi
 
       - name: List files in dist directory before copy
-        run: ls -la dist
+        run: |
+          echo "Listing files in dist directory before copying:"
+          ls -la dist
 
       - name: Copy generated files to output branch
         run: |
