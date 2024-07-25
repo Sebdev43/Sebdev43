@@ -2,7 +2,7 @@ name: Generate snake game
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Exécuter à minuit tous les jours
+    - cron: "0 0 * * *" # Runs at midnight every day
   workflow_dispatch:
 
 jobs:
@@ -22,11 +22,6 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: List files in dist directory after generation
-        run: |
-          echo "Listing files in dist directory after generation:"
-          ls -la dist
-
       - name: Verify generated files
         run: |
           if [ ! -d dist ]; then
@@ -37,6 +32,8 @@ jobs:
             echo "No files generated in dist directory."
             exit 1
           fi
+          echo "Generated files:"
+          ls -la dist
 
       - name: Clone and aggregate repositories
         run: |
@@ -50,11 +47,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
 
-      - name: Change permissions of generated files
-        run: sudo chmod -R 777 dist
-
-      - name: Clean untracked files
-        run: sudo git clean -fd
+      - name: Add and commit aggregated data
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add org-repos/*
+          git commit -m "Aggregated data from different organizations" || echo "No changes to commit"
 
       - name: Create output branch if it doesn't exist
         run: |
@@ -66,37 +64,13 @@ jobs:
             git checkout output
           fi
 
-      - name: List files in dist directory before copy
-        run: |
-          echo "Listing files in dist directory before copying:"
-          ls -la dist
-
       - name: Copy generated files to output branch
         run: |
-          git checkout main
-          mkdir -p dist
-          if [ "$(ls -A dist)" ]; then
-            cp dist/* .
-            git checkout output
-            mv *.svg *.gif dist/
-          else
-            echo "No files generated in dist directory."
-            exit 1
-          fi
-
-      - name: List files in dist directory after copy
-        run: |
-          echo "Listing files in dist directory after copying:"
-          ls -la dist
-
-      - name: Add generated files
-        run: git add dist/*
-
-      - name: Commit and Push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp -r dist/* .
+          git add *.svg *.gif
           git commit -m "Generated snake animation" || echo "No changes to commit"
-          git push origin output --force
+
+      - name: Push changes to output branch
+        run: git push origin output --force
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
