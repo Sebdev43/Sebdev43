@@ -33,6 +33,8 @@ jobs:
           done
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
+          GITHUB_USER: ${{ github.actor }}
+          GITHUB_PAT: ${{ secrets.TOKEN_SNAKE }} # Utilisation du PAT pour l'authentification
 
       - name: Force remove specific files
         run: |
