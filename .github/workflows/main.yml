@@ -1,4 +1,4 @@
-name: Générer le jeu de serpent
+name: Generate snake game
 
 on:
   schedule:
@@ -10,34 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Cloner le dépôt
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Installer GitHub CLI
-        run: sudo apt-get install gh
-
-      - name: Authentifier GitHub CLI
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
-
-      - name: Récupérer tous les dépôts de Sebdev43
-        run: |
-          mkdir -p repos
-          cd repos
-          for repo in $(gh repo list Sebdev43 --limit 100 --json name -q '.[].name'); do
-            git clone https://github.com/Sebdev43/$repo.git
-          done
-
-      - name: Récupérer tous les dépôts des organisations avec lesquelles vous travaillez
-        run: |
-          mkdir -p org-repos
-          cd org-repos
-          for org in $(gh api user/orgs --jq '.[].login'); do
-            for repo in $(gh repo list $org --limit 100 --json name -q '.[].name'); do
-              git clone https://github.com/$org/$repo.git
-            done
-          done
-
-      - name: Générer l'animation du serpent
+      - name: Generate snake animation
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -46,7 +22,19 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Ajouter et valider les changements
+      - name: Clone and aggregate repositories
+        run: |
+          mkdir -p org-repos
+          cd org-repos
+          for org in $(gh api user/orgs --jq '.[].login'); do
+            for repo in $(gh repo list $org --limit 100 --json name -q '.[].name'); do
+              git clone https://github.com/$org/$repo.git
+            done
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
+
+      - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
