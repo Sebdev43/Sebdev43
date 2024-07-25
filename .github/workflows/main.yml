@@ -38,65 +38,42 @@ jobs:
           echo "Generated files:"
           ls -la dist
 
-      - name: Initialize repository and add submodules
+      - name: Clone external repositories
         run: |
-          mkdir -p org-repos
-          cd org-repos
-          submodules_added=false
+          mkdir -p temp-org-repos
+          cd temp-org-repos
           for org in $(gh api user/orgs --jq '.[].login'); do
             for repo in $(gh repo list $org --limit 100 --json name,defaultBranchRef -q '.[] | select(.defaultBranchRef != null) | .name'); do
-              echo "Checking $org/$repo"
-              if [ "$(gh api repos/$org/$repo/branches --jq '.[] | select(.protected == false) | .name')" ]; then
-                echo "Cloning $org/$repo"
-                git submodule add https://github.com/$org/$repo.git $org/$repo || echo "Failed to add $org/$repo as a submodule"
-                submodules_added=true
-              else
-                echo "Skipping $org/$repo (no unprotected branches or empty repository)"
-              fi
+              echo "Cloning $org/$repo"
+              git clone https://$GH_TOKEN@github.com/$org/$repo.git || echo "Failed to clone $org/$repo"
             done
           done
-          if [ "$submodules_added" = false ]; then
-            echo "No submodules added."
-            exit 1
-          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Update submodule URLs to include token
+      - name: Create temporary branch and commit changes
         run: |
-          git config --global url."https://${{ secrets.TOKEN_SNAKE }}@github.com".insteadOf "https://github.com"
-          git submodule sync --recursive
-
-      - name: Commit and push submodules
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -f .gitmodules ]; then
-            git add .gitmodules org-repos
-            git commit -m "Added submodules for organization repositories"
-            git push origin main
-          else
-            echo "No submodules were added, skipping commit."
-            exit 1
-          fi
-
-      - name: Create output branch if it doesn't exist
-        run: |
-          git fetch origin
-          if ! git rev-parse --verify origin/output; then
-            git checkout -b output
-            git push origin output
-          else
-            git checkout output
-          fi
-
-      - name: Copy generated files to output branch
-        run: |
+          git checkout -b temp-output
           cp -r dist/* .
           git add *.svg *.gif
-          git commit -m "Generated snake animation" || echo "No changes to commit"
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit"
+            exit 0
+          else
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Generated snake animation"
+          fi
 
       - name: Push changes to output branch
-        run: git push origin output --force
+        run: |
+          git fetch origin
+          if git rev-parse --verify origin/output; then
+            git checkout output
+            git merge temp-output
+          else
+            git checkout -b output
+          fi
+          git push origin output
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
