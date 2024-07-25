@@ -39,12 +39,23 @@ jobs:
         run: |
           mkdir -p org-repos
           cd org-repos
+          submodules_added=false
           for org in $(gh api user/orgs --jq '.[].login'); do
             for repo in $(gh repo list $org --limit 100 --json name,defaultBranchRef -q '.[] | select(.defaultBranchRef != null) | .name'); do
-              echo "Cloning $org/$repo"
-              git submodule add https://github.com/$org/$repo.git $org/$repo || echo "Failed to add $org/$repo as a submodule"
+              echo "Checking $org/$repo"
+              if [ "$(gh api repos/$org/$repo/branches --jq '.[] | select(.protected == false) | .name')" ]; then
+                echo "Cloning $org/$repo"
+                git submodule add https://github.com/$org/$repo.git $org/$repo || echo "Failed to add $org/$repo as a submodule"
+                submodules_added=true
+              else
+                echo "Skipping $org/$repo (no unprotected branches or empty repository)"
+              fi
             done
           done
+          if [ "$submodules_added" = false ]; then
+            echo "No submodules added."
+            exit 1
+          fi
 
       - name: Update submodule URLs to include token
         run: |
@@ -55,9 +66,14 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .gitmodules org-repos
-          git commit -m "Added submodules for organization repositories"
-          git push origin main
+          if [ -f .gitmodules ]; then
+            git add .gitmodules org-repos
+            git commit -m "Added submodules for organization repositories"
+            git push origin main
+          else
+            echo "No submodules were added, skipping commit."
+            exit 1
+          fi
 
       - name: Create output branch if it doesn't exist
         run: |
