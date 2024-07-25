@@ -25,7 +25,20 @@ jobs:
       - name: Verify generated files
         run: |
           echo "Verifying generated files..."
-          ls -la dist
+          ls -la dist || echo "dist directory does not exist"
+          if [ -d dist ]; then
+            echo "dist directory exists"
+            if [ "$(ls -A dist)" ]; then
+              echo "Files generated in dist:"
+              ls -la dist
+            else
+              echo "No files generated in dist directory."
+              exit 1
+            fi
+          else
+            echo "dist directory does not exist."
+            exit 1
+          fi
 
       - name: Clone and aggregate repositories
         run: |
