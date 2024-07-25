@@ -38,7 +38,6 @@ jobs:
           else
             echo "dist directory does not exist."
             exit 1
-          fi
 
       - name: Clone and aggregate repositories
         run: |
@@ -52,11 +51,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
 
-      - name: Remove generated files to avoid conflicts
-        run: sudo rm -f dist/github-snake-dark.svg dist/ocean.gif dist/github-snake.svg
-
       - name: Clean untracked files
-        run: sudo git clean -fd
+        run: git clean -fd
 
       - name: Create output branch if it doesn't exist
         run: |
