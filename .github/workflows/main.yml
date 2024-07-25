@@ -25,16 +25,13 @@ jobs:
       - name: Remove untracked files
         run: git clean -fdX dist/
 
-      - name: Checkout output branch
-        run: |
-          git fetch origin
-          git checkout -B output origin/output
-
       - name: Commit and Push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "Generated snake animation"
-          branch: output
-          file_pattern: dist/*
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout output || git checkout -b output
+          git add dist/*
+          git commit -m "Generated snake animation"
+          git push origin output --force
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
