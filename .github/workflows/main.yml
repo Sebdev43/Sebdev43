@@ -22,7 +22,7 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: List files in dist directory
+      - name: List files in dist directory after generation
         run: ls -la dist
 
       - name: Clone and aggregate repositories
@@ -53,9 +53,13 @@ jobs:
             git checkout output
           fi
 
+      - name: List files in dist directory before copy
+        run: ls -la dist
+
       - name: Copy generated files to output branch
         run: |
           git checkout main
+          ls -la dist # verify if files exist before copying
           cp dist/* .
           git checkout output
           mv *.svg *.gif dist/
