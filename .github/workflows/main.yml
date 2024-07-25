@@ -13,12 +13,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install GitHub CLI
+        run: sudo apt-get install gh
+
+      - name: Authenticate GitHub CLI
+        run: gh auth login --with-token <<< "${{ secrets.GITHUB_TOKEN }}"
+
       - name: Fetch all commits across organizations
         run: |
           git clone --depth=1 --branch=main https://github.com/${{ github.repository_owner }}/${{ github.repository }}.git
           cd ${{ github.repository }}
           for repo in $(gh repo list ${{ github.repository_owner }} --limit 100 --json name -q '.[].name'); do
-            git clone --depth=1 --branch=main https://github.com/${{ github.repository_owner }}/$repo.git || true
+            git clone --depth=1 https://github.com/${{ github.repository_owner }}/$repo.git || true
           done
 
       - name: Generate snake animation
