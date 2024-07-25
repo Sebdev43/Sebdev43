@@ -87,10 +87,10 @@ jobs:
           git fetch origin
           if git rev-parse --verify origin/output; then
             git checkout output
-            git merge temp-output --allow-unrelated-histories || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
+            git merge temp-output --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
           else
             git checkout -b output
-            git merge temp-output --allow-unrelated-histories || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
+            git merge temp-output --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
           fi
           git push origin output
         env:
