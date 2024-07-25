@@ -22,24 +22,19 @@ jobs:
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Change permissions of generated files
-        run: sudo chmod -R 777 dist
+      - name: List files in dist directory after generation
+        run: |
+          echo "Listing files in dist directory after generation:"
+          ls -la dist
 
       - name: Verify generated files
         run: |
-          echo "Verifying generated files..."
-          ls -la dist || echo "dist directory does not exist"
-          if [ -d dist ]; then
-            echo "dist directory exists"
-            if [ "$(ls -A dist)" ]; then
-              echo "Files generated in dist:"
-              ls -la dist
-            else
-              echo "No files generated in dist directory."
-              exit 1
-            fi
-          else
+          if [ ! -d dist ]; then
             echo "dist directory does not exist."
+            exit 1
+          fi
+          if [ ! "$(ls -A dist)" ]; then
+            echo "No files generated in dist directory."
             exit 1
           fi
 
@@ -54,6 +49,9 @@ jobs:
           done
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
+
+      - name: Change permissions of generated files
+        run: sudo chmod -R 777 dist
 
       - name: Clean untracked files
         run: sudo git clean -fd
@@ -85,6 +83,11 @@ jobs:
             echo "No files generated in dist directory."
             exit 1
           fi
+
+      - name: List files in dist directory after copy
+        run: |
+          echo "Listing files in dist directory after copying:"
+          ls -la dist
 
       - name: Add generated files
         run: git add dist/*
