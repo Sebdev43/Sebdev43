@@ -34,6 +34,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
 
+      - name: Clean untracked files
+        run: git clean -fd
+
       - name: Create output branch if it doesn't exist
         run: |
           git fetch origin
