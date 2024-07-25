@@ -65,15 +65,32 @@ jobs:
             git commit -m "Generated snake animation"
           fi
 
+      - name: Fetch and merge external repository commits
+        run: |
+          cd temp-org-repos
+          for org in $(gh api user/orgs --jq '.[].login'); do
+            for repo in $(gh repo list $org --limit 100 --json name,permissions -q '.[] | select(.permissions.push == true) | .name'); do
+              cd $repo
+              git fetch origin
+              git checkout main
+              git pull origin main
+              git checkout -b temp-main
+              cd ../..
+              git remote add $repo temp-org-repos/$repo
+              git fetch $repo
+              git merge $repo/temp-main --allow-unrelated-histories || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
+            done
+          done
+
       - name: Push changes to output branch
         run: |
           git fetch origin
           if git rev-parse --verify origin/output; then
             git checkout output
-            git merge temp-output --allow-unrelated-histories || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
+            git merge temp-output --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
           else
             git checkout -b output
-            git merge temp-output --allow-unrelated-histories || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
+            git merge temp-output --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
           fi
           git push origin output
         env:
