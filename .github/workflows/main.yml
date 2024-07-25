@@ -34,6 +34,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SNAKE }}
 
+      - name: Create output branch if it doesn't exist
+        run: |
+          git fetch origin
+          if ! git rev-parse --verify origin/output; then
+            git checkout -b output
+            git push origin output
+          else
+            git checkout output
+          fi
+
       - name: Commit and Push changes
         run: |
           git config --global user.name "github-actions[bot]"
