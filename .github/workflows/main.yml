@@ -13,6 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Fetch all commits across organizations
+        run: |
+          git clone --depth=1 --branch=main https://github.com/${{ github.repository_owner }}/${{ github.repository }}.git
+          cd ${{ github.repository }}
+          for repo in $(gh repo list --limit 100 --json name -q '.[].name'); do
+            git clone --depth=1 --branch=main https://github.com/${{ github.repository_owner }}/$repo.git || true
+          done
+
       - name: Generate snake animation
         uses: Platane/snk@v3
         with:
