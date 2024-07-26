@@ -65,9 +65,9 @@
       Cette section met en avant mes contributions sur GitHub, illustrées de manière ludique par une animation Snake. Chaque point sur le graphique représente une contribution, et l'animation montre comment mes activités se sont accumulées au fil du temps. Cette visualisation est une manière créative de suivre et d'afficher mon engagement constant dans divers projets et mon investissement dans l'amélioration continue et le développement collaboratif.
     </p>
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake.svg">
-  <img alt="GitHub Contribution Snake" src="https://github.com/Sebdev43/Sebdev43/blob/output/dist/github-snake.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/github-snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/Sebdev43/Sebdev43/blob/output/github-snake.svg">
+  <img alt="GitHub Contribution Snake" src="https://github.com/Sebdev43/Sebdev43/blob/output/github-snake.svg">
 </picture>
 
   </section>
