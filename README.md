@@ -10,14 +10,7 @@
 <section align="center">
   <h2>📖 About Me</h2>
   <p>
-    Je suis un Développeur Web Full Stack spécialisé dans le développement
-    backend, actuellement en préparation pour le diplôme avec l'école O'clock.
-    Mon champ technique est large, allant du développement d'API à la gestion de
-    bases de données relationnelles. J'ai une appétence particulière pour les
-    nouveaux défis et je suis toujours à la recherche d'opportunités pour
-    appliquer et approfondir mes compétences. Passionné par l'innovation
-    technologique, je m'intéresse également aux technologies émergentes comme la
-    blockchain.
+Grâce à une expérience polyvalente en gestion de projet, développement technique et projets personnels, je me distingue par ma capacité à m'adapter et à trouver des solutions efficaces dans des environnements complexes. Récemment diplômé del'école O'clock, mes projets personnels et expériences antérieures m'ont apporté une autonomie et une maturité qui vont au-delà du profil junior classique. Passionné par l'innovation, je suis prêt à mettre mon expertise au service d'une entreprise dynamique.
   </p>
   <p>
     Le prochain langage qui est dans mon viseur d'apprentissage est le Rust.
