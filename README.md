@@ -1,56 +1,118 @@
-<p align="center"> <img src="https://readme-typing-svg.herokuapp.com?font=Jetbrains+mono&size=40&duration=3000&color=008000&center=true&vCenter=true&width=435&lines=Hey..+I'm+Seb;This+is..;..my+Github..;" alt="Typing SVG" /> </p>
-<h2 align="center">📖 About Me</h2> <p align="center"> Expertise en JavaScript, React et Java, je suis passionné par l'innovation et les solutions techniques. Fort de projets marquants en domotique, impression 3D, et intelligence artificielle. </p>
-<h2 align="center">🌐 Connect with Me</h2> <p align="center"> Je suis actif sur LinkedIn et GitHub. N'hésitez pas à me contacter pour discuter de nouvelles opportunités ou échanger sur les technologies innovantes ! </p> <p align="center"> <a href="https://www.linkedin.com/in/sébastien-robert-dev"> <img src="https://img.shields.io/badge/SebastienRobert-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /> </a> <a href="https://github.com/Sebdev43"> <img src="https://img.shields.io/badge/View%20on%20GitHub-%230077B5.svg?&style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /> </a> <img src="https://komarev.com/ghpvc/?username=Sebdev43&style=for-the-badge" alt="Profile views" /> </p>
-<h2 align="center">💻 Programming Languages</h2> <p align="center"> Les langages principaux que j’utilise pour concevoir des applications robustes et modernes : </p> <p align="center"> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" /> <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white" alt="Java" /> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" /> <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino" /> <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL" /> <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" /> <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" /> </p>
-<h2 align="center">📖 Frameworks and Libraries</h2> <p align="center"> Je m’appuie sur les outils et frameworks suivants pour développer des applications performantes et scalables : </p> <p align="center"> <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native" /> <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=sequelize&logoColor=white" alt="Sequelize" /> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" /> <img src="https://img.shields.io/badge/Apollo_Server-311C87?style=for-the-badge&logo=apollo-graphql&logoColor=white" alt="Apollo Server" /> </p>
-<h2 align="center">🗃️ Content Management Systems (CMS)</h2> <p align="center"> J'utilise divers systèmes de gestion de contenu (CMS) pour créer et administrer des sites web dynamiques et performants. Voici quelques-uns des CMS que je maîtrise : </p> <p align="center"> <img src="https://img.shields.io/badge/Strapi-2E7EEA?style=for-the-badge&logo=strapi&logoColor=white" alt="Strapi" /> <img src="https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white" alt="WordPress" /> <img src="https://img.shields.io/badge/Shopify-7AB55C?style=for-the-badge&logo=shopify&logoColor=white" alt="Shopify" /> <img src="https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white" alt="Gatsby" /> <img src="https://img.shields.io/badge/Sqitch-232F3E?style=for-the-badge&logo=sqitch&logoColor=white" alt="Sqitch" /> </p>
-<h2 align="center">📊 GitHub Stats</h2> <table align="center" width="100%" height="100%">
-    <tr>
-      <td>
-        <img
-          style="border: none"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Sebdev43&theme=github_dark"
-          alt="Seb's GitHub Stats"
-        />
-      </td>
-      <td>
-        <img
-          style="border: none"
-          src="https://github-readme-streak-stats.herokuapp.com/?user=Sebdev43&theme=merko"
-          alt="Seb's Contribution Streak"
-        />
-      </td>
-    </tr>
-  </table>
-  <table align="center" width="100%" height="100%">
-    <tr>
-      <td>
-        <img
-          style="border: none"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Sebdev43&theme=github_dark"
-          alt="Seb's GitHub Stats"
-        />
-      </td>
-      <td>
-        <img
-          style="border: none"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Sebdev43&theme=github_dark&utcOffset=10"
-          alt="Seb's GitHub Stats"
-        />
-      </td>
-      <td>
-        <img
-          style="border: none"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Sebdev43&theme=github_dark"
-          alt="Seb's GitHub Stats"
-        />
-      </td>
-      <td>
-        <img
-          style="border: none"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Sebdev43&theme=github_dark"
-          alt="Seb's GitHub Stats"
-        />
-      </td>
-    </tr>
-  </table>
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Jetbrains+mono&size=40&duration=3000&color=008000&center=true&vCenter=true&width=600&lines=Hey..+I'm+Seb+%F0%9F%91%8B;Développeur+Fullstack;JS+%7C+PHP+%7C+Python+%7C+React+Native;CDI+%40+UDAF+79+%2B+Freelance+CodeHorizon" alt="Typing SVG" />
+</p>
+
+## 👤 About Me
+
+Développeur Fullstack JavaScript (React, Node.js), PHP et Python. En CDI chez **UDAF 79** où je développe 5 logiciels métier utilisés par la quasi-totalité des UDAF françaises, et freelance via **[CodeHorizon](https://www.codehorizon.fr)**.
+
+Mon parcours atypique — 12 ans dans le BTP, gérant e-commerce au Canada (+25% de conversion), puis développeur diplômé O'clock — m'a donné une vision transversale rare : terrain, business et technique.
+
+### 🔭 Currently working on
+
+- **Écho de Légende** — App mobile React Native (v2.4.3, 20 beta testeurs, Play Store imminent)
+- **MealMate** — Planification de repas intelligente connectée aux supermarchés (React Native + Supabase)
+- **Infrastructure IA** — 20 serveurs, Proxmox Dual EPYC 512 Go, Ollama & LocalAI en local
+
+---
+
+## 🚀 Projets phares
+
+| Projet | Description | Stack |
+|--------|-------------|-------|
+| **Écho de Légende** | App mobile patrimoine & randonnée — 1 000+ récits, GPS temps réel | React Native, Expo, Directus, PostgreSQL |
+| **MealMate** | Menus personnalisés + promos supermarchés | React Native, Supabase, n8n, Zustand |
+| **[Lookout](https://github.com/Bande-2-Devs/Lookout)** | Outil open source d'analyse des dépendances | Node.js, TypeScript, Electron, Tauri |
+| **[O'Rando](https://www.o-rando.com)** | Plateforme de randonnée géospatiale (+30% perf API) | React, Node.js, PostgreSQL/PostGIS |
+| **[SystemdManager](https://github.com/Sebdev43/SystemdManager)** | CLI + GUI pour gérer les services systemd | Python, Docker |
+
+---
+
+## 💻 Tech Stack
+
+### Languages
+<p>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java" />
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust" />
+  <img src="https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="SQL" />
+  <img src="https://img.shields.io/badge/Shell-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash" />
+</p>
+
+### Frontend & Mobile
+<p>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+  <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native" />
+  <img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" alt="Expo" />
+  <img src="https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white" alt="Astro" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white" alt="Three.js" />
+</p>
+
+### Backend & BDD
+<p>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express" />
+  <img src="https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />
+</p>
+
+### DevOps & Infra
+<p>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Proxmox-E57000?style=for-the-badge&logo=proxmox&logoColor=white" alt="Proxmox" />
+  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" alt="GitHub Actions" />
+  <img src="https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Cloudflare" />
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white" alt="Nginx" />
+  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
+</p>
+
+### Automatisation & IA
+<p>
+  <img src="https://img.shields.io/badge/n8n-EA4B71?style=for-the-badge&logo=n8n&logoColor=white" alt="n8n" />
+  <img src="https://img.shields.io/badge/Ollama-000000?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama" />
+</p>
+
+---
+
+## 📊 GitHub Stats
+
+<table align="center" width="100%">
+  <tr>
+    <td>
+      <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Sebdev43&theme=github_dark" alt="Profile Details" />
+    </td>
+    <td>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Sebdev43&theme=merko" alt="Streak" />
+    </td>
+  </tr>
+</table>
+<table align="center" width="100%">
+  <tr>
+    <td><img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Sebdev43&theme=github_dark" alt="Stats" /></td>
+    <td><img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Sebdev43&theme=github_dark&utcOffset=2" alt="Productive Time" /></td>
+    <td><img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Sebdev43&theme=github_dark" alt="Repos per Language" /></td>
+    <td><img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Sebdev43&theme=github_dark" alt="Most Commit Language" /></td>
+  </tr>
+</table>
+
+---
+
+## 🌐 Connect
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/sebdev43"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://sebdev43.com"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" /></a>
+  <a href="https://www.codehorizon.fr"><img src="https://img.shields.io/badge/CodeHorizon-FF6B00?style=for-the-badge&logo=firefox&logoColor=white" alt="CodeHorizon" /></a>
+  <a href="mailto:sebdev43c@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=Sebdev43&style=for-the-badge" alt="Profile views" />
+</p>
