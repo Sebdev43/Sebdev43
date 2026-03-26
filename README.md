@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Jetbrains+mono&size=40&duration=3000&color=008000&center=true&vCenter=true&width=600&lines=Hey..+I'm+Seb+%F0%9F%91%8B;Développeur+Fullstack;JS+%7C+PHP+%7C+Python+%7C+React+Native;CDI+%40+UDAF+79+%2B+Freelance+CodeHorizon" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Jetbrains+mono&size=40&duration=3000&color=33FF33&center=true&vCenter=true&width=600&lines=Hey..+I'm+Seb+%F0%9F%91%8B;Développeur+Fullstack;JS+%7C+PHP+%7C+Python+%7C+React+Native;CDI+%40+UDAF+79+%2B+Freelance+CodeHorizon" alt="Typing SVG" />
 </p>
 
 ## 👤 About Me
@@ -101,6 +101,18 @@ Mon parcours atypique — 12 ans dans le BTP, gérant e-commerce au Canada (+25%
     <td><img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Sebdev43&theme=github_dark" alt="Most Commit Language" /></td>
   </tr>
 </table>
+
+---
+
+## 🐍 Contribution Snake
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Sebdev43/Sebdev43/output/github-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Sebdev43/Sebdev43/output/github-snake.svg" />
+    <img alt="Snake animation" src="https://raw.githubusercontent.com/Sebdev43/Sebdev43/output/github-snake-dark.svg" />
+  </picture>
+</p>
 
 ---
 

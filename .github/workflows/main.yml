@@ -1,87 +1,27 @@
-name: Generate snake game
+name: Generate snake animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs at midnight every day
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
       - name: Generate snake animation
         uses: Platane/snk@v3
         with:
-          github_user_name: ${{ github.repository_owner }}
+          github_user_name: Sebdev43
           outputs: |
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
             dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
 
-      - name: Verify generated files
-        run: |
-          if [ ! -d dist ]; then
-            echo "dist directory does not exist."
-            exit 1
-          fi
-          if [ ! "$(ls -A dist)" ]; then
-            echo "No files generated in dist directory."
-            exit 1
-          fi
-          echo "Generated files:"
-          ls -la dist
-
-      - name: Clone external repositories
-        run: |
-          mkdir -p temp-org-repos
-          cd temp-org-repos
-          for org in $(gh api user/orgs --jq '.[].login'); do
-            for repo in $(gh repo list $org --limit 100 --json name,permissions -q '.[] | select(.permissions.push == true) | .name'); do
-              echo "Cloning $org/$repo"
-              git clone --depth 1 https://$GH_TOKEN@github.com/$org/$repo.git || echo "Failed to clone $org/$repo"
-              cd $repo
-              git remote add main https://$GH_TOKEN@github.com/${{ github.repository_owner }}/$(basename $GITHUB_REPOSITORY).git
-              git fetch main
-              git checkout -b temp-branch
-              git merge main/main --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
-              git push origin temp-branch
-              cd ..
-            done
-          done
+      - name: Push to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create temporary branch and commit changes
-        run: |
-          git checkout -b temp-output
-          cp -r dist/* .
-          git add *.svg *.gif
-          if git diff-index --quiet HEAD; then
-            echo "No changes to commit"
-            exit 0
-          else
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "Generated snake animation"
-          fi
-
-      - name: Push changes to output branch
-        run: |
-          git fetch origin
-          if git rev-parse --verify origin/output; then
-            git checkout output
-            git merge temp-output --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
-          else
-            git checkout -b output
-            git merge temp-output --allow-unrelated-histories -X theirs || (echo "Merge conflict detected. Aborting merge." && git merge --abort && exit 1)
-          fi
-          git push origin output
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
