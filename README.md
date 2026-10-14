@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Jetbrains+mono&size=40&duration=3000&color=33FF33&center=true&vCenter=true&width=600&lines=Hey..+I'm+Seb+%F0%9F%91%8B;Développeur+Fullstack;JS+%7C+PHP+%7C+Python+%7C+React+Native;CDI+%40+UDAF+79+%2B+Freelance+CodeHorizon" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Jetbrains+mono&size=40&duration=3000&color=33FF33&center=true&vCenter=true&width=600&lines=Hey..+I'm+Seb+%F0%9F%91%8B;Développeur+Fullstack;JS+%7C+PHP+%7C+Python+%7C+React+Native;CDI+%40+UDAF+79+%2B+Antoune+Syst%C3%A8mes" alt="Typing SVG" />
 </p>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/sebdev43"><img src="https://img.shields.io/badge/LinkedIn-sebdev43-0077B5?style=flat&logo=linkedin" alt="LinkedIn" /></a>
-  <a href="https://sebdev43.com"><img src="https://img.shields.io/badge/Portfolio-sebdev43.com-000?style=flat&logo=vercel" alt="Portfolio" /></a>
-  <a href="https://www.codehorizon.fr"><img src="https://img.shields.io/badge/Freelance-CodeHorizon.fr-FF6B00?style=flat&logo=firefox" alt="CodeHorizon" /></a>
+  <a href="https://antoune.fr"><img src="https://img.shields.io/badge/Ind%C3%A9pendant-antoune.fr-C8501F?style=flat" alt="Antoune Systèmes" /></a>
+  <a href="https://github.com/antoune-systemes"><img src="https://img.shields.io/badge/GitHub-antoune--systemes-16191C?style=flat&logo=github" alt="Organisation Antoune Systèmes" /></a>
   <img src="https://komarev.com/ghpvc/?username=Sebdev43&style=flat" alt="Profile views" />
 </p>
 
@@ -17,12 +17,12 @@ Développeur Fullstack avec un parcours qu'on ne voit pas souvent :
 
 **12 ans conducteur d'engins TP** (France & Canada) → **Gérant e-commerce** au Québec (+25% conversion) → **Développeur diplômé O'clock** (2024). Ce chemin m'a appris l'adaptabilité, la rigueur terrain et la vision business.
 
-Aujourd'hui en **CDI chez UDAF 79** (5 logiciels métier PHP/MySQL, architecture multi-tenant 125 bases, déployés dans quasi-tous les départements français) + **Freelance [CodeHorizon](https://www.codehorizon.fr)** (sites sur mesure, automatisation n8n, infrastructure 20 serveurs).
+Aujourd'hui en **CDI chez UDAF 79** (5 logiciels métier PHP/MySQL, architecture multi-tenant 125 bases, déployés dans quasi-tous les départements français) + **[Antoune Systèmes](https://antoune.fr)**, mon activité de développeur indépendant à Benet (Vendée) : logiciels métier, sites et applications, automatisation n8n, auto-hébergement.
 
 ### 🔭 En ce moment
 
-- 📱 **Écho de Légende** — App mobile React Native, 1 000+ récits patrimoniaux, 20 beta testeurs, Play Store imminent
-- 🍽️ **MealMate** — Planification de repas intelligente connectée aux promos supermarchés (React Native + Supabase)
+- 📱 **Écho de Légende** — App mobile React Native, 1 000+ récits patrimoniaux, en bêta fermée sur le Play Store
+- 🍽️ **Famiam** — Planification de repas intelligente connectée aux promos supermarchés (React Native + Supabase)
 - 🖥️ **Infra IA** — Serveur Dual EPYC 512 Go RAM, LLM en local (Ollama/LocalAI), orchestration GPU
 
 ---
@@ -37,7 +37,7 @@ Aujourd'hui en **CDI chez UDAF 79** (5 logiciels métier PHP/MySQL, architecture
       <code>React Native</code> <code>Expo</code> <code>Directus</code> <code>PostgreSQL</code>
     </td>
     <td width="50%">
-      <h4>🍽️ MealMate</h4>
+      <h4>🍽️ Famiam</h4>
       <p>Menus personnalisés selon tes goûts + promos supermarchés en temps réel. Recommandations PNNS.</p>
       <code>React Native</code> <code>Supabase</code> <code>n8n</code> <code>Zustand</code>
     </td>
